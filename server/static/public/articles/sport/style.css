@@ -1,0 +1,16 @@
+h1 {
+  text-align: center;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img[alt="img1"] {
+  width: 80%;
+}
+
+img[alt="img2"] {
+  width: 50%;
+}
