@@ -189,15 +189,11 @@ $ => y = e^x - x $ ; aceasta se numeste solutia problemei Cauchy.
 **Exemplu**
 
 Sa se determine ecuatia diferentiala verificata de familia de curbe 
-$ y = x^n + Cx + 1, x \in R $ .
-
+$ y = x^n + Cx + 1, x \in R $ . \
 Derivam in raport cu x => 
-$ y' = nx^{n-1} + C $ => $ C = y' - nx^{n-1} $ .
-
-Inlocuim in relatia data:
-
+$ y' = nx^{n-1} + C $ => $ C = y' - nx^{n-1} $ . \
+Inlocuim in relatia data: \
 $ y = x^n + x(y' - nx^{n-1}) + 1 $
-
 $ y = xy' + (1 -n)x^n + 1 $
 
 
