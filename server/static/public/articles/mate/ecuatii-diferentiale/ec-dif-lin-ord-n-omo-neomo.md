@@ -363,3 +363,247 @@ $ B = \\{e^x, x\\} $. => $ y = C_1 e^x + C_2 x $ , $C_1, C_2$ constante arbitrar
 
 ### Ecuatii diferentiale liniare, de ordinul n, neomogene
 
+**Forma generala**:
+$ A_n(y) = f(x) $, $ f: \hat{I} \to \R $ nenula si continua pe $ \hat{I} $ ca
+si in cazul ecuatiei liniare si neomogene de ordinul 1 se poate demonstra urmatoarea
+teorema:
+
+**Teorema**
+Solutia generala a ecuatiei liniare si neomogene, de ordinul n este egala cu suma dintre
+solutia generala a ecuatiei omogene asociate si a solutiei particulare a ec. ...
+$ y = y_o + y_p $ \
+Pentru $ y_o $ avem nevoie de un sistem fundamental de solutii al ecuatiei omogene <=>
+de o baza a spatiului solutiilor:
+$ B = \\{y_1, y_2, ..., y_n \\} $ =>
+$ y_o = C_1y_1 + C_2y_2 + ... + C_ny_n $. \
+Pentru determinarea unei solutii particulare a ecuatiei neomogene se poate utiliza:
+- metoda variatiei constantelor (Lagrange)
+- metoda coeficientilor nedeterninati, daca functi $f(x)$ din membrul drept are o forma
+particulara (pentru ecuatiile cu coeficienti constanti) \
+$ f(x) = K \cdot e^{\alpha x} $ ; $ f(x) = P_n(x)e^{\alpha x} $ ; $ f(x) = P_n(x)\cdot sin \alpha \cdot x \cdot e^{\alpha x} $ \
+Metoda variatiei constantelor consta in urmatoarele:
+  - se pleaca de la solutia generala a ec. omogene asociate
+  $ y = C_1y_1 + C_2y_2 + ... + C_ny_n$
+  - se presupune ca $ C_i = C_i(x) $ , $ i = \overline{1,n} $ (sunt functii derivabile de variabila independenta)
+  - se pune conditia ca 
+  $ y(x) = C_1(x)y_1 + C_2(x)y_2 + ... + C_n(x)y_n $
+  sa verifice **ecuatia omogena**. \
+  Se demonstreaza ca derivatele $C'_1(x), C'_2(x), ..., C'_n(x) $ verifica urmatorul sistem de ecuatii algebrice:
+  $
+  \begin{cases}
+  C'_1y_1 + C'_2y_2 + ... + C'_ny_n = 0 \cr
+  C'_1y'_1 + C'_2y'_2 + ... + C'_ny'_n = 0 \cr
+  ... \cr
+  C'_1y^{n-2}_1 + C'_2y^{n-2}_2 + ... + C'_ny^{n-2}_n = 0 \cr
+  C'_1y^{n-1}_1 + C'_2y^{n-1}_2 + ... + C'_ny^{n-1}_n = 0 = \frac{f(x)}{a_0(x)}
+  \end{cases}
+  $ \
+  $ \Delta = w(y_1, y_2, ..., y_n) \ne 0 $ => sist are solutie unica => 
+  $ \begin{cases}
+  C'_1(x) = \varphi_1(x) \cr
+  C'_2(x) = \varphi_2(x) \cr
+  ... \cr
+  C'_n(x) = \varphi_n(x)
+  \end{cases} $ => 
+  $ \begin{cases}
+  C_1(x) = \int \varphi_1(x)dx + K_1 \cr
+  ... \cr
+  C_n(x) = \int \varphi_n(x)dx + K_n
+  \end{cases} $ => \
+  $ y = (K_1 + \int{\varphi_1(x)}dx)y_1 + ... + (K_n + \int{\varphi_n(x)}dx)y_n $
+
+  $y = \underbrace{K_1y_1 + ... + K_ny_n}_{y_o} +
+   (y_i \cdot \int{\varphi_1(x)}dx + ... + \int{\varphi_n(x)}dx)$ \
+  $ y_o = K_1y_1 + ... + K_ny_n $ \
+  $ y_p = (y_i \cdot \int{\varphi_1(x)}dx + ... + \int{\varphi_n(x)}dx)$
+
+
+### Teorema de existenta si unicitate a solutiei problemei Cauchy
+
+Fiind data ecuati diferentiala liniara si neomogena:
+$ A_n(y) = f(x) $, cu $ a_i, f: \hat{I} \to \R $ continue pe $\hat{I}$ si
+$ a_0(x) \ne 0 $ pe $\hat{I}$, exista si este unica solutia $ y : \hat{I} \to \R $ 
+a acestei ecuatii, de clasa $C^n(\hat{I}) $, care satisface ***conditiile initiale***
+ale lui Cauchy:
+$ \begin{cases}
+y(x_0) = y_0 \cr
+y'(x_0) = y_1 \cr
+y''(x_0) = y_2 \cr
+... \cr
+y^{(n-1)}(x_0) = y_{n-1} \cr
+\end{cases} $, $x_0 \in \hat{I}$, $y_0, y_1, ..., y_{n-1} $ sunt n numere date.
+
+**Exemplu** Fie ec. dif. de ord 3, neomogena $ y''' - 6y'' + 11y' - 6y = 0 $. \
+Sa se det. solutia sa generala si solutia problemei Cauchy care satisface cond. initiale:
+$ y(x) = 0 $; $y'(0) = 0$; $y''(0) = 1$.
+
+- (1) Se det. un sistem fundamental de solutii pt ec. omogena:
+  - se cauta solutii de forma $ y = e^{rx} $ \
+  $ r^3 - 6r^2 + 11r - 6 = 0 $. => \
+  $ r_1 = 1, r_2 = 2, r_3 = 3 $ => \
+  $ \\{ y_1 = e^2, y_2 = e^{2x}, y_3 = e^{3x} \\} $. \
+  $ w(y_1, y_2, y_3) \ne 0 $, $ \forall x \in \R $ => \
+  $ y_o = C_1e^x + C_2e^{2x} + C_3e^{3x} $ \
+  $ \begin{cases}
+  y(0) = C_1 + C_2 + C_3 = 0 \cr
+  y'(0) = C_1 + 2C_2 + 3C_3 = 0 \cr
+  y''(0) = C_1 + 4C_2 + 9C_3 = 1
+  \end{cases} $ -> sistem de 3 ec algebrice, cu 3 nec: $C_1, C_2, C_3$ => \
+  $ C_1 = \frac{1}{2} $; $ C_2 = -1 $; $ C_3 = \frac{1}{2} $, solutie unica => \
+  $ y(x) = \frac{1}{2}e^x - e^{2x} + \frac{1}{2}e^{3x} $ = sol. unica a problemei Cauchy.
+
+Daca ecuatia ar fi fost neomogena, trebuia sa se determine si o solutie particulara prin
+metoda variatiei constantelor (Lagrange) si dupa aceea se determina solutia problemei
+Cauchy conform algoritmului de mai sus.
+
+#### Principiul superpozitiei (suprapunerii efectelor)
+Daca functia $ f(x) $ din membrul drept al ecuatiei dif este o suma de functii 
+$ (k = 1, 2, 3, ...) $ <=> \
+$ A_n(y) = f_1(x) + f_2(x) + ... + f_k(x) $, atunci se determina cate o solutie
+particulara pentru fiecare ecuatie neomogena de tipul urmator:\
+(1)
+$ \begin{cases}
+A_n(y) = f_1(x) -> y_{p_1}(x) \cr
+A_n(y) = f_2(x) -> y_{p_2}(x) \cr
+... \cr
+A_n(y) = f_k(x) -> y_{p_k}(x)
+\end{cases} $ prin met. variatiei constantelor sau prin metoa coeficientilor nedeterminati. \
+Atunci $ y_p(x) = y_{p_1}(x) + y_{p_2}(x) + ... + y_{p_k}(x) $ = suma tuturor solutiilor
+particulare ale fiecarei ecuatii din (1). \
+**Obs** Principiul superpozitiei se aplica numai pentru ecualii liniare!
+
+### Ecuatii diferentiale liniare, de ordinul n omogene si neomogene, cu coeficienti constanti
+
+**Forma generala**:
+$ a_0y^{(n)} + a_1y^{(n-1)} + ... a_{n-1}y' + a_ny = f(x) $, unde $a_1$,
+$i = \overline{0,n} $ sunt constante si $ f: \hat{I} \to \R $ este o functie continua.\
+Toate rezultatele ... anterior raman valabile si pentru aceste ecuatii. \
+In plus ... si urmatoarele rezultate ..., specifice:
+- (a) pentru ecuatia omogena asociata se poate determina intotdeauna un sistem
+fundamental de solutii, deci si solutia sa generala
+- (b) pentru ecuatia neomogena se poate utiliza metoda coeficientilor nedeterminati
+pentru pentru determinarea unei solutii particulare a ecuatiei din membrul drept - are
+cateva forme specifice prezentate anterior.
+
+- (a) **Ecuatia omogena asociata**: \
+$ A_n(y) = 0 $; $a_0y^{(n)} + a_1y^{(n-1)} + ... + a_{n-1}y' + a_ny = 0$ \
+Dupa o idee a lui Euler, se cauta solutii de forma $ y = e^{rx} $, unde $ r = \text{ct} $
+sise va determina din conditia ca $ y = e^{rx} $ sa verifice ecuatia omogena. \
+$ y = e^{rx} $; $y' = re^{rx} $; $y''=r^2e^{rx}$, ..., $y^{(n)} = r^ne^{rx}$. \
+Ecuatia omogena devine: \
+$ e^{rx}(a_0r^n + a_1r^{n-1} + ... + a_{n-1}r + a_n) = 0 $ \
+cum $ e^{rx} \ne 0$, $\forall x \in \R$ => \
+$ \underbrace{a_0r^n + a_1r^{n-1} + ... + a_{n-1}r + a_n}_{K_n(r)=0} = 0 $ \
+care este o secuatie algebrica polinomiala de gradul n, numita **ecuatia caracteristica**
+asociata ecuatiei dif. omogene. \
+Necunoscuta este numarul $ r \in \R, \Complex$, din $ y = e^{rx} $, ... solutie pt ecuatia
+diferentiala. \
+Radacinile ecuatiei caracteristice, $ K_n(r) = 0 $ pot fi:
+- reale:
+  - simple (distincte)
+  - multiple
+- complex conjugate:
+  - simple
+  - multiple
+
+- (1) $ K_n(r) = 0 $ are $n$ radacini reale si distincte: \
+$ r_1 \ne r_2 \ne ... \ne r_n \in \R $. Lor le vor corespunde solutiile: \
+$ y_1 = e^{r_1x}, y_2 = e^{r_2x}, ..., y_n = e^{r_nx} $, care formeaza un
+sistem fundamental de solutii pentru ecuatia omogena: \
+$ w(e^{r_1x}, e^{r_2x}, ..., e^{r_nx}) = 
+\begin{vmatrix}
+e^{r_1x} & e^{r_2x} & ... & e^{r_nx} \cr
+r_1e^{r_1x} & r_2e^{r_2x} & ... & r_ne^{r_nx} \cr
+... & ... & ... & ... \cr
+r^{n-1}_1 e^{r_1x} & r^{n-1}_2 e^{r_2x} & ... & r^{n-1}_n e^{r_nx}
+\end{vmatrix}
+= e^{(r_1 + r_2 + ... + r_n)x} \cdot
+\begin{vmatrix}
+1 & 1 & ... & 1 \cr
+r_1 & r_2 & ... & r_n \cr
+... & ... & ... & ... \cr
+r^{n-1}_1 & r^{n-1}_2 & ... & r^{n-1}_n
+\end{vmatrix}
+\overset{\text{determinant Vandermonde}}{=} e^{-\frac{a_1}{a_0}x} \cdot
+\underset{1 \le i \le j \le n}{\prod}(r_j - r_i) \ne 0 
+$ deoarece $ r_i \ne r_j $, $ \forall i \ne j = 1,n $ => \
+$ \\{ e^{r_1x}, e^{r_2x}, ..., e^{r_nx} \\} $ = sistem fundamental de solutii => solutia
+generala a ec. omogene va fi: \
+$ y_o = C_1y_1 + C_2y_2 + ... + C_ny_n $ , sau: \
+$ y_o = C_1e^{r_1x} + C_2e^{r_2x} + ... + C_ne^{r_nx} $
+
+**Exemplu**: $ y'' - 5y' + 4y = 0 $. Fie $ y = e^{rx} $ => $ y' = re^{rx} $;
+$ y'' = r^2 e^{rx} $ \
+$ e^{rx} (r^2 - 5r + 4) = 0 | : e^{rx} \ne 0 $ => \
+$ r^2 - 5r + 4 = 0 $ = ecuatia caracteristica asociata ecuatiei omogene. 
+-----------
+$ ax^2 + bx + c = 0 $ => $ \Delta = b^2 - 4ac $ \
+$ x_{1,2} = \frac{-b \pm \sqrt{\Delta}}{2a} \in \R $
+-----------
+$ \Delta = 25 - 16 = 9 $ => $ r_{1,2} = \frac{5 \pm \sqrt{9}}{2} $ =>
+$
+\begin{cases}
+r_1 = 4 \cr
+r_2 = 1
+\end{cases} $ => \
+$ y_1 = e^{4x}$, $y_2 = e^x$, $ B = \\{ e^{4x}, e^x\\} $ => $ y_o = C_1e^{4x} + C_2e^x $.
+
+**Exemplu** $ y''' + 3y'' - y' - 3y = 0 $. Sol generala si solutia problemei Cauchy:
+$ y(0) = 0 $, $y'(0) = 1$, $y''(0) = -1$.
+
+(2) Ecuatia caracteristica $ K_n(r) = 0 $ are radacini reale si multiple. Se demonstreaza
+ca fiecarei radacini reale si multiple de ordinul k ii corespund un numar de k solutii in
+sistemul fundamental de solutii al ed dif omogene $ r = \rho_1 $ multipla de
+ordinul $k_1$ => ii vor corespunde $k_1$ solutii pt ec dif (independente)
+$y_1 = e^{\rho_1x}$, $y_2 = xe^{\rho_1x}$, ..., $y_{k_1} = x^{k_1-1}e^{\rho_1x} $ \
+Pentru fiecare rad reala si multipla a ecuatiei caracteristice se procedeaza similar.
+
+**Exemplu** $ y'' - 6y' + 9y = 0 $, $y = e^{rx}$, $y' = re^{rx}$. \
+$ y'' = r^2e^{rx} $ => $ e^{rx}(r^2 - yr + 9) = 0 | : e^{rx} $ \
+$ r^2 - 6r + 9 = 0 $; $(r-3)^2 = 0 $; $r_1 = r_2 = 3$ => $ y_1 = e^{3x}$, $y_2 = xe^{ex}$\
+$ y_o = C_1e^{3x} + C_2xe^{3x}$
+
+(3) Ecuatia $K_n(r) = 0$ are radacini complexe conjugate simple: \
+$ r_k = \alpha_k + i\beta_k$; $ \overline{r_k} = \alpha_k - i\beta_k$ => \
+$ y_{1k} = e^{\alpha_k x} \cdot cos\beta_k x$;\
+$y_{2k} = e^{\alpha_k x} \cdot sin\beta_k x$
+
+(4) Ec caracteristica $K_n(r) = 0$ are radacini complexe conjugate multiple. \
+Fie $r_1 = \alpha + i\beta$ si $\overline{r_2} = \alpha - i\beta$ multiple de ordinul
+$\rho_1$ fiecare. Lor le corespund urmatoarele solutii in sistemul fundamental al
+ecuatiei diferentiale: \
+$ \begin{cases}
+y_1 = e^{\alpha x} \cdot \beta x; y_2 = xe^{\alpha x}cos\beta x; ....; y_{\rho} = x^{\rho-1}e^{\alpha x}cos\beta x \cr
+\overline{y_1} = e^{\alpha x} \cdot \beta x; y_2 = xe^{\alpha x}cos\beta x; ....; y_{\rho} = x^{\rho-1}e^{\alpha x}cos\beta x 
+\end{cases} $ \
+Analog pentru orice radacina conjugata multipla a ecuatiei caracteristice.
+
+**Exemple** \
+(3):
+- a) $ y'' - 2y' + 2y = 0 $; $r_{1,2} = 1 \pm i $;
+$ \begin{cases}
+y_1 = e^x cos x \cr
+y_2 = e^x sin x
+\end{cases} $ .
+- b) $ y^{(4)} + 2y^{(2)} + 17y'' + 8y' + 4y = 0 $; 
+$ \begin{cases}
+r_1 = 2i; r_2 = -2i \cr
+r_3 = -\frac{1}{4} + i\frac{\sqrt{3}}{4}; r_4 = -\frac{1}{4} - i\frac{\sqrt{3}}{4}
+\end{cases} $
+
+(a) $ y^{(4)} - 4y^{(3)} + 8y'' - 8y' + 4y = 0 $; $ y = e^{rx} $ \
+$ r^4 - 4r^3 + 8r^2 - 8r + 4 = 0 $ \
+$ (r^2 - 2r + 2)^2 = 0 $;
+$ \begin{cases}
+y_1 = 1 + i -> \text{dubla} \cr
+y_2 = 1 - i -> \text{dubla}
+\end{cases} $;
+$ \begin{cases}
+y_1 = e^x cos x \cr
+y_2 = e^x sin x 
+\end{cases} $;
+$ \begin{cases}
+y_1 = xe^x cos x \cr
+y_2 = xe^x sin x 
+\end{cases} $; \
+$ y_o = C_1y_1 + C_2y_2 + C_3\overline{y_1} + C_4\overline{y_2} $
